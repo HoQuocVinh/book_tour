@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap');
+@import "react-date-range/dist/styles.css"; // main style file
+@import "react-date-range/dist/theme/default.css"; // theme css file
+@import "swiper/css";
+@import "swiper/css/pagination";
+
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../public/asset/fonts/Helvetica.woff2') format('woff2'),
+    url('../public/asset/fonts/Helvetica.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../public/asset/fonts/Helvetica-Bold.woff2') format('woff2'),
+    url('../public/asset/fonts/Helvetica-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../public/asset/fonts/Helvetica-Light.woff2') format('woff2'),
+    url('../public/asset/fonts/Helvetica-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica World';
+  src: url('../public/asset/fonts/HelveticaWorld-Regular.woff2') format('woff2'),
+    url('../public/asset/fonts/HelveticaWorld-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+:root {
+  --font-family: 'Helvatica', sans-serif;
+}
+
+// // Fonts emmbeded
+// @font-face {
+//   font-family: Helvetica;
+//   src: url('/assets/fonts/Helvetica-Bold.ttf');
+//   font-weight: 700;
+// }
+
+// @font-face {
+//   font-family: ProximaNova;
+//   src: url('/assets/fonts/Helvetica.ttf');
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: ProximaNova;
+//   src: url('/assets/fonts/Helvetica.ttf');
+//   font-weight: 500;
+// }
+
+// @font-face {
+//   font-family: ProximaNova;
+//   src: url('/assets/fonts/Helvetica.ttf');
+//   font-weight: 600;
+// }
+
+
+@layer base {
+  html {
+    @apply bg-background;
+  }
+
+  //*Scrollbar css
+  //* Scrollbar css
+  html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+  }
+
+  html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .15);
+  }
+
+  html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  body {
+    // @apply font-Poppins;
+    font-family: var(--font-family);
+    font-weight: 400;
+
+    input {
+      @apply outline-none;
+    }
+  }
+}
+
+input:focus+.error-input {
+  display: none;
+}
+
+
+input.e-control {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+//custom react-date-range
+.rdrStaticRanges {
+  @apply text-black;
+}
+
+.rdrInputRanges>div>span {
+  @apply text-black;
+}
+
+.rdrDateRangePickerWrapperP {
+  position: relative;
+}
+
+@media screen and (max-width: 640px) {
+  .rdrDefinedRangesWrapper {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .rdrDefinedRangesWrapper {
+    display: block;
+  }
+}
+
+
+.progress-done {
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+}
+
+
+.ribbon {
+  position: relative;
+  color: white;
+  padding: 0 10px 0 10px;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 12%), 0 0px 2px rgb(0 0 0 / 24%);
+}
+
+.ribbon::before {
+  content: '';
+
+  left: 0;
+  bottom: -10px;
+  position: absolute;
+
+  border-style: solid;
+
+  border-width: 0 10px 10px 0;
+  border-right-color: #9C0000;
+  border-bottom-color: transparent;
+
+}
+
+.tour-list-pros {
+  margin-bottom: 4px;
+}
+
+.tour-list-pros>li {
+  color: #00abc5;
+  padding: 0px 12px 0px 12px;
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.tour-list-pros>li::after {
+  position: absolute;
+  content: '';
+  background-color: #00abc5;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  left: 0;
+  bottom: 50%;
+}
+
+.skeleton {
+  background-color: #e2e5e7;
+  background-image:
+    linear-gradient(90deg,
+      rgba(#fff, 0),
+      rgba(#fff, 0.5),
+      rgba(#fff, 0));
+  background-size: 40px 100%;
+  background-repeat: no-repeat;
+  background-position: left -40px top 0;
+  animation: shine 1s ease infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: right -40px top 0;
+  }
+}
+
+
+// Codepen spesific styling - only to center the elements in the pen preview and viewport 
+// .container {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex-wrap: wrap;
+// }
+
+// .rate {
+//   font-weight: 700;
+//   font-size: 16px;
+//   line-height: 20px;
+//   color: #fff;
+//   background: #fdc432;
+//   width: 42px;
+//   height: 32px;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+//   position: relative;
+//   border-top-left-radius: 5px;
+//   border-top-right-radius: 5px;
+//   border-bottom-right-radius: 5px;
+//   margin-right: 11px;
+// }
+
+// .rate::after {
+//   content: "";
+//   display: block;
+//   width: 0;
+//   height: 0;
+//   border-right: 6px solid transparent;
+//   border-top: 6px solid #fdc432;
+//   position: absolute;
+//   top: 100%;
+//   left: 0;
+//   z-index: 1;
+// }

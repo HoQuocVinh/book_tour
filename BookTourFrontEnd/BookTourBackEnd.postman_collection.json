@@ -1,0 +1,1213 @@
+{
+	"info": {
+		"_postman_id": "05ff71bb-d1de-4331-b6f2-bf65be235934",
+		"name": "BookTourBackEnd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18539904"
+	},
+	"item": [
+		{
+			"name": "Auth Controller",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\":\"Nguyen Thanh Quoc Tuan\",\r\n    \"email\":\"tuanlatui123@gmail.com.vn\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@booktour.com\",\r\n    \"password\":\"BookTour@@admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"19110303@student.hcmute.edu.vn\",\r\n    \"password\":\"Qi9zuYbX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/token/eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dWFubGF0dWkxMjNAZ21haWwuY29tLnZuIiwiaWF0IjoxNjY4NTc4OTk1LCJleHAiOjE2Njg1OTY5OTV9.w6n2OPiL7Ygplpf0fnflgadgxeHvj__YoCc5ehilN3lPcLsNS72TU2vdkRIYTjFkCTb2Vv5hnREW8EhY_VejpA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"token",
+								"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dWFubGF0dWkxMjNAZ21haWwuY29tLnZuIiwiaWF0IjoxNjY4NTc4OTk1LCJleHAiOjE2Njg1OTY5OTV9.w6n2OPiL7Ygplpf0fnflgadgxeHvj__YoCc5ehilN3lPcLsNS72TU2vdkRIYTjFkCTb2Vv5hnREW8EhY_VejpA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Controller",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dWFubGF0dWkxMjNAZ21haWwuY29tLnZuIiwiaWF0IjoxNjY4NTM1Njc4LCJleHAiOjE2Njg1Mzc0Nzh9.ot6T2yjy7kvIvA2v7eAdT37Gd99dZJYkeSFQSlfMaHhhJ7dLZWXWNdDY1KJciNMuF1TaSRn1JGfSCQN7I1hQmw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Paging",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBib29rdG91ci5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjY5MTA2MDkyLCJleHAiOjE2NjkxMDc4OTJ9.L8qBWJ7QAvxmPOrmgO9UY6gSnGsrl9C9MgH7M7piTFMAh5kT1tAcM_zlQjpFTsqjP9F1a2AzijCduyrfdVAGmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/paging?pageNo=2&pageSize&sortBy&sortDir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"paging"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "2"
+								},
+								{
+									"key": "pageSize",
+									"value": null
+								},
+								{
+									"key": "sortBy",
+									"value": null
+								},
+								{
+									"key": "sortDir",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBib29rdG91ci5jb20iLCJpYXQiOjE2Njc4MTUzMDgsImV4cCI6MTY2NzgxNzEwOH0.RMMPHWSd-iXFWU-a-OH7GCFGRRIXxJ1jUFyc-kkvE6Re51lYtNWCib1vDLGfPeF3CFN7JyNe6bgNgyvH4kUPwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/19110303@student.hcmute.edu.vn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"19110303@student.hcmute.edu.vn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "hongbietnua",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/avt/19110303@student.hcmute.edu.vn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"avt",
+								"19110303@student.hcmute.edu.vn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dWFubGF0dWkxMjNAZ21haWwuY29tLnZuIiwiaWF0IjoxNjY4NTM2MjE3LCJleHAiOjE2Njg1MzgwMTd9.umZZ7ZjZ0xVjUFqmCiAZpKDDIeTFq-mlosdisLR6JvB6GsNk7k5ROREiFyoQgIH_Y7yvqejlMYknamOsiBXPog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": {\r\n        \"city\": \"Cao Lãnh\",\r\n        \"district\": \"Xã Phong Mỹ\",\r\n        \"street\": \"Ấp 3\"\r\n    },\r\n    \"birthDay\": \"07/02/2001\",\r\n    \"email\": \"19110303@student.hcmute.edu.vn\",\r\n    \"fullName\": \"Hồ Quốc Vinh\",\r\n    \"gender\": \"MALE\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/19110303@student.hcmute.edu.vn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"19110303@student.hcmute.edu.vn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dWFubGF0dWkxMjNAZ21haWwuY29tLnZuIiwiaWF0IjoxNjY4NTM2MjE3LCJleHAiOjE2Njg1MzgwMTd9.umZZ7ZjZ0xVjUFqmCiAZpKDDIeTFq-mlosdisLR6JvB6GsNk7k5ROREiFyoQgIH_Y7yvqejlMYknamOsiBXPog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deleteField\":\"tronglagi111@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/changePass/{email}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"changePass",
+								"{email}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Role to User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dWFubGF0dWkxMjNAZ21haWwuY29tLnZuIiwiaWF0IjoxNjY4NTM2MjE3LCJleHAiOjE2Njg1MzgwMTd9.umZZ7ZjZ0xVjUFqmCiAZpKDDIeTFq-mlosdisLR6JvB6GsNk7k5ROREiFyoQgIH_Y7yvqejlMYknamOsiBXPog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/role/addtouser/19110303@student.hcmute.edu.vn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"addtouser",
+								"19110303@student.hcmute.edu.vn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role to User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBib29rdG91ci5jb20iLCJpYXQiOjE2Njc4MTYxOTcsImV4cCI6MTY2NzgxNzk5N30.ob73a0BSkimDO7MdXz_4p6xhOvOSfKY0xxedAeRCiMBikgwV8q_EujtuF2x4AqiEHd4wa5F5ieLkveWAVI1iYw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/role/delete/19110303@student.hcmute.edu.vn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"delete",
+								"19110303@student.hcmute.edu.vn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/search/?search=Nguyen&page=0&size =3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Nguyen"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size ",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/forgotPass/19110303@student.hcmute.edu.vn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"forgotPass",
+								"19110303@student.hcmute.edu.vn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tour Controller",
+			"item": [
+				{
+					"name": "Add Tour",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBib29rdG91ci5jb20iLCJpYXQiOjE2Njg2MjA2OTksImV4cCI6MTY2ODYyMjQ5OX0.FuExnV-3mdUZm0XBILEkalxDppefjB4O9Hg4WBxRYVsLu4FK3qhGnqee97dwrfyy-6ZVE5LCrXvzaHYE-4Hnaw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tourDetail\": {\r\n      \"tourName\": \"alo alo\",\r\n      \"tourDes\": \"Bắt Chó\",\r\n      \"price\": 6900000,\r\n      \"images\": [],\r\n      \"startDay\": \"20/11/2022\",\r\n      \"endDay\": \"25/11/2022\",\r\n      \"beginningLocation\": {\r\n        \"locationName\": \"TP. Hồ Chí Minh\",\r\n        \"locationType\": \"BEGINNING\"\r\n      },\r\n      \"destinationLocation\": {\r\n        \"locationName\": \"Bình Thuận\",\r\n        \"locationType\": \"DESTINATION\"\r\n      }\r\n    },\r\n    \"type\": \"TOUR_BASIC\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tour/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tour",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"passenger\":{\r\n        \"fullName\":\"Nguyen Thanh Trong\",\r\n        \"birthDay\":\"06/07/2001\"\r\n    },\r\n    \"tourDetail\":{\r\n        \"tourName\":\"Vũng Tàu bao hot\",\r\n        \"tourDes\":\"troi oi la troi vo day ma xem\",\r\n        \"price\":10000\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tour/634547a799f4120c566bcc9f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"634547a799f4120c566bcc9f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tour By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tour/63738810d3350b0114ef9bef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"63738810d3350b0114ef9bef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tour",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tour",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBib29rdG91ci5jb20iLCJpYXQiOjE2Njg1MzUwMjEsImV4cCI6MTY2ODUzNjgyMX0.v5ZjGFayiRSClxSIonPk--DRNsPzbU9jSXAjIXTpTeE7T5T9xwu97w4C5OfncuCjtHb1aqsBw1IyMdkIY8gIgg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tour/delete/63738810d3350b0114ef9bef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"delete",
+								"63738810d3350b0114ef9bef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add All Tour",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBib29rdG91ci5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjY5MTM2OTE0LCJleHAiOjE2NjkxMzg3MTR9.VVInjIMrqUDwNZRGwe5bLN0idzHuldWgEc2LZj19zXckRK4aggvDDduTxq6PLSdi_qKRJaTzqcKNOD6r8ZSubg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Phú Quốc - Thiên đường giải trí Vinwonder - Safari World - Hòn Thơm Nature Park - Cáp Treo Vượt Biển - Công Viên Nước Aquatopia\",\r\n            \"tourDes\": \"Giờ bay phụ thuộc vào hãng hàng không, số bữa ăn phụ thuộc vào giờ bay. Các bữa ăn có thể hoán đổi để phù hợp với chương trình.\",\r\n            \"price\": 7900000,\r\n            \"images\": [],\r\n            \"startDay\": \"10/12/2022\",\r\n            \"endDay\": \"15/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Phú Quốc\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \" HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Phú Quốc - Thiên đường giải trí Vinwonder - Safari World - Hòn Thơm Nature Park - Cáp Treo Vượt Biển - Công Viên Nước Aquatopia\",\r\n            \"tourDes\": \"Giờ bay phụ thuộc vào hãng hàng không, số bữa ăn phụ thuộc vào giờ bay. Các bữa ăn có thể hoán đổi để phù hợp với chương trình.\",\r\n            \"price\": 6900000,\r\n            \"images\": [],\r\n            \"startDay\": \"10/11/2022\",\r\n            \"endDay\": \"15/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Phú Quốc\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \" FLIGHT\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Bảo Lộc - Madagui - Đắk Nông - Tuyệt tác Hồ Tà Đùng\",\r\n            \"tourDes\": \"Khám phá Madagui - khu sinh thái rừng có bộ sưu tập tre với gần năm mươi chủng loại, sự đa dạng của gần một trăm giống cây ăn trái đang tuổi ra hoa kết trái bên cạnh những trò chơi đầy thử thách và ấn tượng: Công Viên Thần Núi, được ngắm Cầu Treo bắc qua dòng sông Đạ Huoai, Đường Đi Bộ Trên Không khám phá rừng sinh thái.\",\r\n            \"price\": 1690000,\r\n            \"images\": [],\r\n            \"startDay\": \"12/11/2022\",\r\n            \"endDay\": \"14/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Đà Lạt\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Tây Bắc: Hà Nội - Nghĩa Lộ - Tú Lệ - Mù Cang Chải - Sapa - Fansipan - Lai Châu - Điện Biên - Sơn La - Mộc Châu Island - Trải nghiệm cầu kính đi bộ dài nhất thế giới\",\r\n            \"tourDes\": \"Điểm nhấn: - Chinh phục 3 trong 4 “Tứ đại đèo” vùng Đông Tây Bắc (đèo Khau Phạ, Ô Quy Hồ & Pha Đin) - Ruộng bậc thang Mù Cang Chải tuyệt đẹp vào mùa lúa chín (tháng 8-9), mùa nước đổ (tháng 5-6).\",\r\n            \"price\": 9390000,\r\n            \"images\": [],\r\n            \"startDay\": \"15/11/2022\",\r\n            \"endDay\": \"22/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Hà Nội\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Tây Bắc: Hà Nội - Nghĩa Lộ - Tú Lệ - Mù Cang Chải - Sapa - Fansipan - Lai Châu - Điện Biên - Sơn La - Mộc Châu Island - Trải nghiệm cầu kính đi bộ dài nhất thế giới\",\r\n            \"tourDes\": \"Điểm nhấn: - Chinh phục 3 trong 4 “Tứ đại đèo” vùng Đông Tây Bắc (đèo Khau Phạ, Ô Quy Hồ & Pha Đin) - Ruộng bậc thang Mù Cang Chải tuyệt đẹp vào mùa lúa chín (tháng 8-9), mùa nước đổ (tháng 5-6).\",\r\n            \"price\": 9390000,\r\n            \"images\": [],\r\n            \"startDay\": \"15/11/2022\",\r\n            \"endDay\": \"22/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Hà Nội\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"FLIGHT\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Long An - Khám Phá Con Đường Xuyên Rừng Tràm Tân Lập\",\r\n            \"tourDes\": \"Để có một chuyến đi vừa gói gọn trong những ngày cuối tuần lại vừa thỏa mãn sự tò mò của những du khách thích ngao du, Long An là một gợi ý lý tưởng.\",\r\n            \"price\": 690000,\r\n            \"images\": [],\r\n            \"startDay\": \"13/11/2022\",\r\n            \"endDay\": \"14/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Long An\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Đà Nẵng - Bà Nà - Cầu Vàng - Sơn Trà - Biển Mỹ Khê - Hội An - Đà Nẵng (Khách sạn 4* trọn tour)\",\r\n            \"tourDes\": \"\",\r\n            \"price\": 4390000,\r\n            \"images\": [],\r\n            \"startDay\": \"15/11/2022\",\r\n            \"endDay\": \"16/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Đà Nẵng\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Đà Nẵng - Bà Nà - Cầu Vàng - Sơn Trà - Biển Mỹ Khê - Hội An - Đà Nẵng (Khách sạn 4* trọn tour)\",\r\n            \"tourDes\": \"\",\r\n            \"price\": 4390000,\r\n            \"images\": [],\r\n            \"startDay\": \"15/11/2022\",\r\n            \"endDay\": \"16/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Đà Nẵng\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"FLIGHT\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Đà Nẵng - KDL Bà Nà - Sơn Trà - Hội An - La Vang - Động Phong Nha - Làng hương Thủy Xuân - An Định Cung - Huế (Khách sạn 4* trọn tour)\",\r\n            \"tourDes\": \"Điểm nhấn: - Bà Nà Hills với không gian như làng Pháp thu nhỏ đa sắc màu - Phố cổ Hội An với lung linh sắc màu của đèn lồng và những hoạt động dân gian đặc sắc - Đại Nội Huế rộng lớn nơi hoàng cung xưa của các vua chúa Triều Nguyễn - Động Phong Nha được xem như chốn thần tiên bởi hệ thống núi đá vôi và sông ngầm dài nhất thế giới\",\r\n            \"price\": 5990000,\r\n            \"images\": [],\r\n            \"startDay\": \"15/11/2022\",\r\n            \"endDay\": \"20/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Đà Nẵng\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Đà Nẵng - KDL Bà Nà - Sơn Trà - Hội An - La Vang - Động Phong Nha - Làng hương Thủy Xuân - An Định Cung - Huế (Khách sạn 4* trọn tour)\",\r\n            \"tourDes\": \"Điểm nhấn: - Bà Nà Hills với không gian như làng Pháp thu nhỏ đa sắc màu - Phố cổ Hội An với lung linh sắc màu của đèn lồng và những hoạt động dân gian đặc sắc - Đại Nội Huế rộng lớn nơi hoàng cung xưa của các vua chúa Triều Nguyễn - Động Phong Nha được xem như chốn thần tiên bởi hệ thống núi đá vôi và sông ngầm dài nhất thế giới\",\r\n            \"price\": 5990000,\r\n            \"images\": [],\r\n            \"startDay\": \"15/11/2022\",\r\n            \"endDay\": \"20/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Đà Nẵng\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"FLIGHT\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Miền Tây - Bến Tre - Trà Vinh- Cồn Chim - Nụ Cười Mê Kông\",\r\n            \"tourDes\": \"Hành trình trở về với thiên nhiên sẽ giúp du khách cảm nhận được không gian yên bình dưới những tán dừa xanh của Khu vườn sinh thái Riverside Garden nằm ngay sông Hàm Luông thoáng mát, nơi trồng các loại cây ăn trái nông sản xanh.\",\r\n            \"price\": 1790000,\r\n            \"images\": [],\r\n            \"startDay\": \"19/11/2022\",\r\n            \"endDay\": \"21/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Bến tre\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Vũng Tàu - hành hương Lễ Phật - lắng nghe Thuyết Pháp - Mùng 1 Tết\",\r\n            \"tourDes\": \"Trên hành trình “Quán chiếu thân”, mỗi bước chân, Phật tử sẽ cảm thấy cõi lòng mình như dịu lại, tâm hồn như được thư giãn, xóa bỏ phiền muộn của cuộc sống đời thường khi hòa vào khung cảnh thiên nhiên tươi đẹp trong âm vang thanh tịnh tiếng chuông chùa.\",\r\n            \"price\": 790000,\r\n            \"images\": [],\r\n            \"startDay\": \"22/01/2023\",\r\n            \"endDay\": \"23/01/2023\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Bà Rịa - Vũng Tàu\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Theo Dấu Chân Biệt Động Sài Gòn\",\r\n            \"tourDes\": \"\",\r\n            \"price\": 590000,\r\n            \"images\": [],\r\n            \"startDay\": \"27/11/2022\",\r\n            \"endDay\": \"27/11/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Hành trình xanh Cần Giờ - Vàm Sát\",\r\n            \"tourDes\": \"Một ngày hòa minh giữa thiên nhiên xanh mát ở khu dự trữ sinh quyển thế giới, khám phá “ lá phổi xanh” của thành phố bằng các hoạt động tham quan tại Chiến Khu Rừng Sác\",\r\n            \"price\": 1690000,\r\n            \"images\": [],\r\n            \"startDay\": \"10/12/2022\",\r\n            \"endDay\": \"10/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Sài Gòn đẹp lắm! Trải nghiệm xe buýt hai tầng - Xuôi dòng Bình Trị Giang\",\r\n            \"tourDes\": \"Chu du trên xe buýt đỏ mui trần, du khách khám phá và cảm nhận nhịp sống năng động của một “Sài Thành hoa lệ” bằng một cách rất khác\",\r\n            \"price\": 990000,\r\n            \"images\": [],\r\n            \"startDay\": \"10/12/2022\",\r\n            \"endDay\": \"10/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Sài Gòn - Chợ Lớn - hòa âm nhộn nhịp - bức họa đa màu\",\r\n            \"tourDes\": \"\",\r\n            \"price\": 790000,\r\n            \"images\": [],\r\n            \"startDay\": \"11/12/2022\",\r\n            \"endDay\": \"11/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Miền Tây: Cần Thơ - Sóc Trăng - Bạc Liêu - Cà Mau - Đất Mũi\",\r\n            \"tourDes\": \"\",\r\n            \"price\": 3490000,\r\n            \"images\": [],\r\n            \"startDay\": \"09/12/2022\",\r\n            \"endDay\": \"12/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Miền Tây: Cần Thơ - Sóc Trăng - Bạc Liêu - Cà Mau - Đất Mũi\",\r\n            \"tourDes\": \"\",\r\n            \"price\": 3490000,\r\n            \"images\": [],\r\n            \"startDay\": \"09/12/2022\",\r\n            \"endDay\": \"12/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Đà Lạt - Thành Phố Ngàn Hoa\",\r\n            \"tourDes\": \"Khách hàng sẽ được đi tham quan thành phố Đà Lạt với các điểm đến như: Hồ Than Thở, Nhà Hàng Thủy Tạ, Dinh Bảo Đại.\",\r\n            \"price\": 1200000,\r\n            \"images\": [],\r\n            \"startDay\": \"13/12/2022\",\r\n            \"endDay\": \"15/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Đà Lạt\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"FLIGHT\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Bảo Lộc - MaDaGui\",\r\n            \"tourDes\": \"Khách hàng sẽ được đi tham quan Madagui và du lịch KS 4 sao của Bảo Lộc\",\r\n            \"price\": 800000,\r\n            \"images\": [],\r\n            \"startDay\": \"20/12/2022\",\r\n            \"endDay\": \"21/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Bảo Lộc\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Bình Dương\",\r\n            \"tourDes\": \"Khách hàng sẽ được đi tham quan thành phố Dĩ An của Bình Dương\",\r\n            \"price\": 400000,\r\n            \"images\": [],\r\n            \"startDay\": \"12/12/2022\",\r\n            \"endDay\": \"13/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Bình Dương\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Cà Mau - Vẻ Đẹp sông nước\",\r\n            \"tourDes\": \"Quý khách sẽ dừng lại và lưu lại kí ức, hình ảnh đẹp về Cà Mau\",\r\n            \"price\": 3000000,\r\n            \"images\": [],\r\n            \"startDay\": \"11/12/2022\",\r\n            \"endDay\": \"13/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Cà Mau\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"FLIGHT\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Bình Thuận - Vùng biển ngư dân\",\r\n            \"tourDes\": \"Quý khách sẽ được ngắm biển và các hoạt động của ngư dân vùng biển Bình Thuận\",\r\n            \"price\": 500000,\r\n            \"images\": [],\r\n            \"startDay\": \"20/12/2022\",\r\n            \"endDay\": \"21/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Bình Thuận\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Cao Bằng - Vẻ đẹp miền núi\",\r\n            \"tourDes\": \"Khách hàng sẽ được đi tham quan vẽ đẹp hùng vĩ của Cao Bằng\",\r\n            \"price\": 12000000,\r\n            \"images\": [],\r\n            \"startDay\": \"05/12/2022\",\r\n            \"endDay\": \"08/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Cao Bằng\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Đà Nẵng - Cầu Rồng\",\r\n            \"tourDes\": \"Quý khách sẽ được tham quan Cầu Rồng và nghỉ dưỡng tại KS 4 sao\",\r\n            \"price\": 8000000,\r\n            \"images\": [],\r\n            \"startDay\": \"07/12/2022\",\r\n            \"endDay\": \"09/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Đà Nẵng\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"FLIGHT\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Nghệ An - Quê của chủ tịch Hồ Chí Minh\",\r\n            \"tourDes\": \"Nghệ An là một tỉnh ven biển nằm ở gần cực bắc khu vực Bắc Trung Bộ, miền Trung của Việt Nam và là tỉnh có diện tích lớn nhất Việt Nam. Trước đây, Nghệ An cùng với Hà Tĩnh có cùng một tên chung là Hoan Châu, Nghệ An châu, xứ Nghệ, rồi trấn Nghệ An.\",\r\n            \"price\": 11000000,\r\n            \"images\": [],\r\n            \"startDay\": \"09/12/2022\",\r\n            \"endDay\": \"11/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Nghệ An\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Đồng Tháp - Vẻ đẹp vùng sông nước\",\r\n            \"tourDes\": \"Khách hàng được trải nghiệm cuộc sống vùng sông nước\",\r\n            \"price\": 800000,\r\n            \"images\": [],\r\n            \"startDay\": \"05/12/2022\",\r\n            \"endDay\": \"07/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Đồng Tháp\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Kon Tum - Vẻ đẹp của miền núi\",\r\n            \"tourDes\": \"Khách hàng được trải nghiệm cuộc sống vùng núi\",\r\n            \"price\": 1000000,\r\n            \"images\": [],\r\n            \"startDay\": \"03/12/2022\",\r\n            \"endDay\": \"04/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Kon Tum\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"TOUR_BASIC\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Nha Trang - Vẻ đẹp của biển\",\r\n            \"tourDes\": \"Khách hàng được tham quan vẻ đẹp của biển ở Nha Trang\",\r\n            \"price\": 1800000,\r\n            \"images\": [],\r\n            \"startDay\": \"08/12/2022\",\r\n            \"endDay\": \"10/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Nha Trang\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"HOTEL\"\r\n    },\r\n    {\r\n        \"tourDetail\": {\r\n            \"tourName\": \"Phú Quốc - Rạch Vẹm - Vẻ đẹp của biển đảo\",\r\n            \"tourDes\": \"Du lịch Phú Quốc 4 ngày 3 đêm bạn cũng có thể dành thời gian khám phá làng chài Rạch Vẹm và chụp ảnh với sao biển tại đây. Đi dạo trên bãi biển, đón bình minh, ngắm hoàng hôn và thưởng thức hải sản tươi ngon là những hoạt động mà bất cứ du khách nào cũng muốn trải nghiệm ở làng chài Rạch Vẹm.\",\r\n            \"price\": 9000000,\r\n            \"images\": [],\r\n            \"startDay\": \"27/12/2022\",\r\n            \"endDay\": \"29/12/2022\",\r\n            \"beginningLocation\": {\r\n                \"locationName\": \"Hồ Chí Minh\",\r\n                \"locationType\": \"BEGINNING\"\r\n            },\r\n            \"destinationLocation\": {\r\n                \"locationName\": \"Phú Quốc\",\r\n                \"locationType\": \"DESTINATION\"\r\n            }\r\n        },\r\n        \"type\": \"FLIGHT\"\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Tour",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"tourDetail\": {\r\n                \"beginningLocation\": {\r\n                    \"locationName\": \"TP. Hồ Chí Minh\",\r\n                    \"locationType\": \"BEGINNING\"\r\n                },\r\n                \"destinationLocation\": {\r\n                    \"locationName\": \"TP. Hồ Chí Minh\",\r\n                    \"locationType\": \"DESTINATION\"\r\n                }\r\n            },\r\n    \"type\":\"TOUR_BASIC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/search?pageSize=4&pageNo=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"search"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "4"
+								},
+								{
+									"key": "pageNo",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location Controller",
+			"item": [
+				{
+					"name": "Get All Locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/locations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Locations Paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/locations/paging?pageNo=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"locations",
+								"paging"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Location",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"locationName\":\"TP. Hồ Chí Minh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/locations/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"locations",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location By Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/locations/type?typeName=BEGINNING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"locations",
+								"type"
+							],
+							"query": [
+								{
+									"key": "typeName",
+									"value": "BEGINNING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location By Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/location/637cfc7bbd06b737d1065606",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"location",
+								"637cfc7bbd06b737d1065606"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add All Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBib29rdG91ci5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjY5NTQ4NDQ4LCJleHAiOjE2Njk1NTAyNDh9.qEL_6tTqLGHYzQCRU-3-lZPrp4VnxNDrNrBOm_V-TmIch1nvBWoG40QnI7VMUOeniExHfYwTE9Yu5bE0rVeu_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"locationName\": \"Hồ Chí Minh\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hà Nội\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Đà Nẵng\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Cần Thơ\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hải Phòng\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bình Dương\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Nha Trang\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Huế\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quy Nhơn\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Phú Quốc\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Long Xuyên\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quảng Ngãi\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Vũng Tàu\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quảng Ninh\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Buôn Mê Thuột\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Vinh\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Cà Mau\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Rạch Giá\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Đà Lạt\",\r\n    \"locationType\": \"BEGINNING\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hồ Chí Minh\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"An Giang\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bà Rịa - Vũng Tàu\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bắc Kạn\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bạc Liêu\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bắc Ninh\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bến Tre\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bình Định\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bình Dương\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bình Phước\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Bình Thuận\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Buôn Ma Thuột\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Cà Mau\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Cần Thơ\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Cao Bằng\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Côn Đảo\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Đà Lạt\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Đà Nẵng\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Đắk Nông\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Điện Biên\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Đồng Nai\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Đồng Tháp\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Nghệ An\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hà Giang\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hạ Long\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hà Nam\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hà Nội\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hà Tiên\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hà Tĩnh\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hải Phòng\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hòa Bình\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Hòn Sơn\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Huế\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Kiên Giang\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Kon Tum\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Lạng Sơn\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Lào Cai\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Long An\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Nam Định\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Nha Trang\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Ninh Bình\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Ninh Thuận\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Pleiku\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Phan Thiết\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Phú Quốc\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Phú Thọ\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Phú Yên\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quảng Bình\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quảng Ngãi\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quảng Nam\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quảng Ninh\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quảng Trị\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Quy Nhơn\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Sóc Trăng\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Sơn La\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Tây Ninh\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Tiền Giang\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"TP.Hồ Chí Minh\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Trà Vinh\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Tuyên Quang\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Thái Bình\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Thanh Hóa\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Vĩnh Long\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Vĩnh Phúc\",\r\n    \"locationType\": \"DESTINATION\"\r\n  },\r\n  {\r\n    \"locationName\": \"Yên Bái\",\r\n    \"locationType\": \"DESTINATION\"\r\n  }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/locations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dWFubGF0dWkxMjNAZ21haWwuY29tLnZuIiwiaWF0IjoxNjY4NTgwMTQzLCJleHAiOjE2Njg1ODE5NDN9.7xod4PlObozIO5vGXBfAG3IYgFrOCAsqT9kRJ2DK0fkDS-901UVzUaylqSh9vnIEFR3a06wY-cdtEAe-Sfs6Cw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"locationName\": \"Bình Thuận\",\r\n    \"locationType\": \"BEGINNING\"\r\n}\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/location/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"location",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dWFubGF0dWkxMjNAZ21haWwuY29tLnZuIiwiaWF0IjoxNjY4NTgwMjQ5LCJleHAiOjE2Njg1ODIwNDl9.ozAqnQFeAZavpIiuyBTHXH6_4ysZiaxS7O0cyXZEt2S0rrGl1fctQwIcI2bCFf03qKq7rJ0mEeo5KqywNQ4GpA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/location/63748384cba73679510ca805",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"location",
+								"63748384cba73679510ca805"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBib29rdG91ci5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjY5NTM2OTE0LCJleHAiOjE2Njk1Mzg3MTR9.ZbwgkWVogapn5b4GybBB92VsloYzS6gOZ24HHFCqrPXujyIuXcX6yFAZ53tM90uyyTqS175ZJdyVv2cQUyK7Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/location/delete/637cfc7bbd06b737d10655f8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"location",
+								"delete",
+								"637cfc7bbd06b737d10655f8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Controller",
+			"item": [
+				{
+					"name": "Get all bookings paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking By Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Active Booking",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOTExMDMwM0BzdHVkZW50LmhjbXV0ZS5lZHUudm4iLCJpYXQiOjE2Njg1OTA1NTUsImV4cCI6MTY2ODU5MjM1NX0.CkyWH8n_qdcP-OWiwnpn4Nt764cf6DpnvdNMhYum-SApEoEQCWQqpco08wXKTnt6_ViL3vryUv8bW4bhWZADgA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tourId\":\"63738810d3350b0114ef9bfc\",\r\n    \"email\":\"19110303@student.hcmute.edu.vn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/booking/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"booking",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking By User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/bookings/user/tuanlatui123@gmail.com.vn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bookings",
+								"user",
+								"tuanlatui123@gmail.com.vn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rate Controller",
+			"item": []
+		}
+	]
+}
