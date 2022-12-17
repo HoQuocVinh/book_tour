@@ -9,7 +9,7 @@ Developer: Hồ Quốc Vinh - 19110318 & Trịnh Đinh Hoàng Huy - 19110218
 * cd BookTourBackEnd
 * mvn spring-boot:run
 
-## Run Fron end Client
+## Run Front end Client
 * Install Node
 * cd BookTourFrontEnd
 * npm start
